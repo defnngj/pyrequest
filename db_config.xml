@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<mysql>
-  <describe>设置MySQL数据库链接配置</describe>
-    <host>127.0.0.1</host>
-    <post>3306</post>
-    <db>guest</db>
-    <user>root</user>
-    <password></password>
-</mysql>

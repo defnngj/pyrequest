@@ -5,22 +5,22 @@ import pymysql.cursors
 import os, time
 from xml.dom.minidom import parse
 
+import configparser as cparser
 
-# ======== Reading db_config.xml setting ===========
+
+# ======== Reading db_config.ini setting ===========
 base_dir = str(os.path.dirname(os.path.dirname(__file__)))
 base_dir = base_dir.replace('\\', '/')
-file_path = base_dir + "/db_config.xml"
+file_path = base_dir + "/db_config.ini"
 
+cf = cparser.ConfigParser()
 
-dom = parse(file_path)
-host = dom.getElementsByTagName('host')[0].firstChild.data
-post = dom.getElementsByTagName('post')[0].firstChild.data
-db = dom.getElementsByTagName('db')[0].firstChild.data
-user = dom.getElementsByTagName('user')[0].firstChild.data
-try:
-    password = dom.getElementsByTagName('password')[0].firstChild.data
-except AttributeError:
-    password = ''
+cf.read(file_path)
+host = cf.get("mysqlconf", "host")
+port = cf.get("mysqlconf", "port")
+db   = cf.get("mysqlconf", "db_name")
+user = cf.get("mysqlconf", "user")
+password = cf.get("mysqlconf", "password")
 
 
 # ======== MySql base operating ===================
