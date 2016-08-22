@@ -1,10 +1,6 @@
 # coding=utf8
-__author__ = 'bugmaster'
-
 import pymysql.cursors
-import os, time
-from xml.dom.minidom import parse
-
+import os
 import configparser as cparser
 
 
@@ -77,4 +73,3 @@ if __name__ == '__main__':
     db.clear(table_name)
     db.insert(table_name, data)
     db.close()
-

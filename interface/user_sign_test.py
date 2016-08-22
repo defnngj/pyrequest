@@ -81,4 +81,5 @@ class UserSignTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    test_data.init_data() # 初始化接口测试数据
     unittest.main()
