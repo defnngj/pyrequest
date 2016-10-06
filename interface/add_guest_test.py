@@ -10,7 +10,7 @@ class AddGuessTest(unittest.TestCase):
     ''' 添加嘉宾 '''
 
     def setUp(self):
-        self.base_url = "http://127.0.0.1:8000/sign/add_guest/"
+        self.base_url = "http://127.0.0.1:8000/api/add_guest/"
 
     def tearDown(self):
         print(self.result)

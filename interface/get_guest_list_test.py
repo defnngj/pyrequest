@@ -10,7 +10,7 @@ class GetGuestListTest(unittest.TestCase):
     ''' 获得嘉宾列表 '''
 
     def setUp(self):
-        self.base_url = "http://127.0.0.1:8000/sign/get_guest_list/"
+        self.base_url = "http://127.0.0.1:8000/api/get_guest_list/"
 
     def tearDown(self):
         print(self.result)

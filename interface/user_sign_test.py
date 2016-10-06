@@ -10,7 +10,7 @@ class UserSignTest(unittest.TestCase):
     ''' 用户签到 '''
 
     def setUp(self):
-        self.base_url = "http://127.0.0.1:8000/sign/user_sign/"
+        self.base_url = "http://127.0.0.1:8000/api/user_sign/"
 
     def tearDown(self):
         print(self.result)
