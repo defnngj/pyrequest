@@ -5,6 +5,8 @@
     <title>Guest Manage System Interface Test Report</title>
     <meta name="generator" content="HTMLTestRunner 0.8.2"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     
 <style type="text/css" media="screen">
 body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
@@ -189,8 +191,8 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Guest Manage System Interface Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2016-08-22 23:11:30</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.797946</p>
+<p class='attribute'><strong>Start Time:</strong> 2016-10-17 22:35:54</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.689648</p>
 <p class='attribute'><strong>Status:</strong> Pass 29</p>
 
 <p class='description'>Implementation Example with: </p>
@@ -199,9 +201,9 @@ function showOutput(id, name) {
 
 
 <p id='show_detail_line'>Show
-<a href='javascript:showCase(0)'>Summary</a>
-<a href='javascript:showCase(1)'>Failed</a>
-<a href='javascript:showCase(2)'>All</a>
+<a href='javascript:showCase(0)' class="btn btn-xs btn-primary">Summary</a>
+<a href='javascript:showCase(1)' class="btn btn-xs btn-danger">Failed</a>
+<a href='javascript:showCase(2)' class="btn btn-xs btn-info">All</a>
 </p>
 <table id='result_table'>
 <colgroup>
@@ -588,7 +590,7 @@ pt3.1: {'status': 10022, 'message': 'query result is empty'}
         </div>
         <pre>
         
-pt3.2: {'data': {'eid': 1, 'name': '红米Pro发布会', 'status': True, 'address': '北京会展中心', 'limit': 2000, 'start_time': '2017-08-20T14:00:00'}, 'status': 200, 'message': 'success'}
+pt3.2: {'data': {'name': '红米Pro发布会', 'limit': 2000, 'start_time': '2017-08-20T14:00:00', 'status': True, 'eid': 1, 'address': '北京会展中心'}, 'status': 200, 'message': 'success'}
 
 
         </pre>
@@ -638,7 +640,7 @@ pt3.3: {'status': 10022, 'message': 'query result is empty'}
         </div>
         <pre>
         
-pt3.4: {'data': [{'eid': 1, 'name': '红米Pro发布会', 'status': True, 'address': '北京会展中心', 'limit': 2000, 'start_time': '2017-08-20T14:00:00'}, {'eid': 4, 'name': '发布会已结束', 'status': True, 'address': '北京会展中心', 'limit': 2000, 'start_time': '2001-08-20T14:00:00'}, {'eid': 5, 'name': '小米5发布会', 'status': True, 'address': '北京国家会议中心', 'limit': 2000, 'start_time': '2017-08-20T14:00:00'}, {'eid': 11, 'name': '一加4手机发布会', 'status': True, 'address': '深圳宝体', 'limit': 2000, 'start_time': '2017-05-10T12:00:00'}], 'status': 200, 'message': 'success'}
+pt3.4: {'data': [{'name': '红米Pro发布会', 'limit': 2000, 'start_time': '2017-08-20T14:00:00', 'status': True, 'eid': 1, 'address': '北京会展中心'}, {'name': '发布会已结束', 'limit': 2000, 'start_time': '2001-08-20T14:00:00', 'status': True, 'eid': 4, 'address': '北京会展中心'}, {'name': '小米5发布会', 'limit': 2000, 'start_time': '2017-08-20T14:00:00', 'status': True, 'eid': 5, 'address': '北京国家会议中心'}, {'name': '一加4手机发布会', 'limit': 2000, 'start_time': '2017-05-10T12:00:00', 'status': True, 'eid': 11, 'address': '深圳宝体'}], 'status': 200, 'message': 'success'}
 
 
         </pre>
@@ -722,7 +724,7 @@ pt4.2: {'status': 10022, 'message': 'query result is empty'}
         </div>
         <pre>
         
-pt4.3: {'data': {'email': 'alen@mail.com', 'realname': 'alen', 'phone': '13511001100', 'sign': False}, 'status': 200, 'message': 'success'}
+pt4.3: {'data': {'sign': False, 'phone': '13511001100', 'realname': 'alen', 'email': 'alen@mail.com'}, 'status': 200, 'message': 'success'}
 
 
         </pre>
@@ -747,7 +749,7 @@ pt4.3: {'data': {'email': 'alen@mail.com', 'realname': 'alen', 'phone': '1351100
         </div>
         <pre>
         
-pt4.4: {'data': [{'email': 'alen@mail.com', 'realname': 'alen', 'phone': '13511001100', 'sign': False}, {'email': 'sign@mail.com', 'realname': 'has sign', 'phone': '13511001101', 'sign': True}, {'email': '', 'realname': 'tom', 'phone': '13511001199', 'sign': False}], 'status': 200, 'message': 'success'}
+pt4.4: {'data': [{'sign': False, 'phone': '13511001100', 'realname': 'alen', 'email': 'alen@mail.com'}, {'sign': True, 'phone': '13511001101', 'realname': 'has sign', 'email': 'sign@mail.com'}, {'sign': False, 'phone': '13511001199', 'realname': 'tom', 'email': ''}], 'status': 200, 'message': 'success'}
 
 
         </pre>
@@ -956,7 +958,7 @@ pt5.6: {'status': 10023, 'message': 'event status is not available'}
         </div>
         <pre>
         
-pt5.7: {'status': 200, 'message': 'sign success'}
+pt5.7: {'phone': '13511001100', 'realname': 'alen', 'status': 200, 'message': 'sign success'}
 
 
         </pre>
@@ -994,9 +996,9 @@ pt5.8: {'status': 10024, 'message': 'event has started'}
 <tr id='total_row'>
     <td>Total</td>
     <td>29</td>
-    <td>29</td>
-    <td>0</td>
-    <td>0</td>
+    <td class="text text-success">29</td>
+    <td class="text text-danger">0</td>
+    <td class="text text-warning">0</td>
     <td>&nbsp;</td>
 </tr>
 </table>

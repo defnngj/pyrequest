@@ -190,6 +190,8 @@ class Template_mixin(object):
     <title>%(title)s</title>
     <meta name="generator" content="%(generator)s"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     %(stylesheet)s
 </head>
 <body>
@@ -415,9 +417,9 @@ a.popup_link:hover {
 
     REPORT_TMPL = """
 <p id='show_detail_line'>Show
-<a href='javascript:showCase(0)'>Summary</a>
-<a href='javascript:showCase(1)'>Failed</a>
-<a href='javascript:showCase(2)'>All</a>
+<a href='javascript:showCase(0)' class="btn btn-xs btn-primary">Summary</a>
+<a href='javascript:showCase(1)' class="btn btn-xs btn-danger">Failed</a>
+<a href='javascript:showCase(2)' class="btn btn-xs btn-info">All</a>
 </p>
 <table id='result_table'>
 <colgroup>
@@ -440,9 +442,9 @@ a.popup_link:hover {
 <tr id='total_row'>
     <td>Total</td>
     <td>%(count)s</td>
-    <td>%(Pass)s</td>
-    <td>%(fail)s</td>
-    <td>%(error)s</td>
+    <td class="text text-success">%(Pass)s</td>
+    <td class="text text-danger">%(fail)s</td>
+    <td class="text text-warning">%(error)s</td>
     <td>&nbsp;</td>
 </tr>
 </table>
@@ -628,7 +630,7 @@ class HTMLTestRunner(Template_mixin):
         test(result)
         self.stopTime = datetime.datetime.now()
         self.generateReport(test, result)
-        print(sys.stderr, '\nTime Elapsed: %s' % (self.stopTime-self.startTime))
+        #print(sys.stderr, '\nTime Elapsed: %s' % (self.stopTime-self.startTime))
         return result
 
 
