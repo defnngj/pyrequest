@@ -26,6 +26,7 @@ class DB:
         try:
             # Connect to the database
             self.connection = pymysql.connect(host=host,
+                                              port=int(port),
                                               user=user,
                                               password=password,
                                               db=db,
