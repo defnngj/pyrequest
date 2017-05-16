@@ -62,6 +62,14 @@ class DB:
     def close(self):
         self.connection.close()
 
+    # init data
+    def init_data(self, datas):
+        for table, data in datas.items():
+            self.clear(table)
+            for d in data:
+                self.insert(table, d)
+        self.close()
+
 
 if __name__ == '__main__':
 
