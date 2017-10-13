@@ -1,10 +1,7 @@
 import sys
 sys.path.append('../db_fixture')
-try:
-    from mysql_db import DB
-except ImportError:
-    from .mysql_db import DB
 
+from db_fixture.mysql_db import DB
 
 
 # create data
