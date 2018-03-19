@@ -40,7 +40,7 @@ class UserSignTest(unittest.TestCase):
         self.assertEqual(self.result['message'], 'event status is not available')
 
     def test_user_sign_time_start(self):
-        ''' eid=3 发布会已开始 '''
+        ''' eid=4 发布会已开始 '''
         payload = {'eid':4,'phone':13711001100}
         r = requests.post(self.base_url,data=payload)
         self.result = r.json()

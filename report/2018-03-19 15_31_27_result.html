@@ -2,16 +2,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Guest Manage System Interface Test Report</title>
+    <title>发布会签到系统接口自动化测试</title>
     <meta name="generator" content="HTMLTestRunner 0.8.2"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/Chart.js/0.2.0/Chart.min.js"></script>
+    <!-- <link href="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js" rel="stylesheet">   -->
+    
     
 <style type="text/css" media="screen">
 body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
 table       { font-size: 100%; }
-pre         { }
+pre         {  }
 
 /* -- heading ---------------------------------------------------------------------- */
 h1 {
@@ -21,6 +24,7 @@ h1 {
 .heading {
     margin-top: 0ex;
     margin-bottom: 1ex;
+	margin-left: 10px;
 }
 
 .heading .attribute {
@@ -47,8 +51,6 @@ a.popup_link:hover {
     left: 0px;
     top: 0px;
     /*border: solid #627173 1px; */
-    padding: 10px;
-    background-color: #E6E6D6;
     font-family: "Lucida Console", "Courier New", Courier, monospace;
     text-align: left;
     font-size: 8pt;
@@ -60,25 +62,31 @@ a.popup_link:hover {
 #show_detail_line {
     margin-top: 3ex;
     margin-bottom: 1ex;
+    margin-left: 10px;
 }
 #result_table {
     width: 80%;
     border-collapse: collapse;
     border: 1px solid #777;
+    margin-left: 10px;
 }
 #header_row {
     font-weight: bold;
-    color: white;
-    background-color: #777;
+    color: #606060;
+    background-color: #f5f5f5;
+    border-top-width: 10px;
+    border-color: #d6e9c6;
+	font-size: 12px;
 }
 #result_table td {
-    border: 1px solid #777;
+    border: 1px solid #f5f5f5;
     padding: 2px;
+
 }
 #total_row  { font-weight: bold; }
-.passClass  { background-color: #6c6; }
-.failClass  { background-color: #c60; }
-.errorClass { background-color: #c00; }
+.passClass  { background-color: #d6e9c6; }
+.failClass  { background-color: #faebcc; }
+.errorClass { background-color: #ebccd1; }
 .passCase   { color: #6c6; }
 .failCase   { color: #c60; font-weight: bold; }
 .errorCase  { color: #c00; font-weight: bold; }
@@ -90,6 +98,26 @@ a.popup_link:hover {
 #ending {
 }
 
+/* -- chars ---------------------------------------------------------------------- */
+.testChars {margin-left: 150px;}
+
+.btn-info1 {
+    color: #fff;
+    background-color: #d6e9c6;
+    border-color: #d6e9c6;
+}
+
+.btn-info2 {
+    color: #fff;
+    background-color: #faebcc;
+    border-color: #faebcc;
+}
+
+.btn-info3 {
+    color: #fff;
+    background-color: #ebccd1;
+    border-color: #ebccd1;
+}
 </style>
 
 </head>
@@ -190,17 +218,28 @@ function showOutput(id, name) {
 --></script>
 
 <div class='heading'>
-<h1>Guest Manage System Interface Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2016-10-17 22:35:54</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.689648</p>
+<h1>发布会签到系统接口自动化测试</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-03-19 15:31:27</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.336898</p>
 <p class='attribute'><strong>Status:</strong> Pass 29</p>
 
-<p class='description'>Implementation Example with: </p>
+<p class='description'>运行环境：MySQL(PyMySQL), Requests, unittest </p>
+</div>
+
+<div style="float:left; margin-left: 10px;">
+	<p> Test Case Pie charts </p>
+	<a class="btn btn-xs btn-info1">-Pass-</a><br>
+	<a class="btn btn-xs btn-info2">-Faild-</a><br>
+	<a class="btn btn-xs btn-info3">-Error-</a><br>
+</div>
+
+<div class="testChars">
+	<canvas id="myChart" width="250" height="250"></canvas>
 </div>
 
 
 
-<p id='show_detail_line'>Show
+<p id='show_detail_line' style="margin-left: 10px;">Show
 <a href='javascript:showCase(0)' class="btn btn-xs btn-primary">Summary</a>
 <a href='javascript:showCase(1)' class="btn btn-xs btn-danger">Failed</a>
 <a href='javascript:showCase(2)' class="btn btn-xs btn-info">All</a>
@@ -214,7 +253,7 @@ function showOutput(id, name) {
 <col align='right' />
 <col align='right' />
 </colgroup>
-<tr id='header_row'>
+<tr id='header_row' class="panel-title">
     <td>Test Group/Test case</td>
     <td>Count</td>
     <td>Pass</td>
@@ -590,7 +629,7 @@ pt3.1: {'status': 10022, 'message': 'query result is empty'}
         </div>
         <pre>
         
-pt3.2: {'data': {'name': '红米Pro发布会', 'limit': 2000, 'start_time': '2017-08-20T14:00:00', 'status': True, 'eid': 1, 'address': '北京会展中心'}, 'status': 200, 'message': 'success'}
+pt3.2: {'status': 200, 'message': 'success', 'data': {'eid': 1, 'name': '红米Pro发布会', 'limit': 2000, 'status': True, 'address': '北京会展中心', 'start_time': '2018-03-19T18:18:07'}}
 
 
         </pre>
@@ -640,7 +679,7 @@ pt3.3: {'status': 10022, 'message': 'query result is empty'}
         </div>
         <pre>
         
-pt3.4: {'data': [{'name': '红米Pro发布会', 'limit': 2000, 'start_time': '2017-08-20T14:00:00', 'status': True, 'eid': 1, 'address': '北京会展中心'}, {'name': '发布会已结束', 'limit': 2000, 'start_time': '2001-08-20T14:00:00', 'status': True, 'eid': 4, 'address': '北京会展中心'}, {'name': '小米5发布会', 'limit': 2000, 'start_time': '2017-08-20T14:00:00', 'status': True, 'eid': 5, 'address': '北京国家会议中心'}, {'name': '一加4手机发布会', 'limit': 2000, 'start_time': '2017-05-10T12:00:00', 'status': True, 'eid': 11, 'address': '深圳宝体'}], 'status': 200, 'message': 'success'}
+pt3.4: {'status': 200, 'message': 'success', 'data': [{'eid': 1, 'name': '红米Pro发布会', 'limit': 2000, 'status': True, 'address': '北京会展中心', 'start_time': '2018-03-19T18:18:07'}, {'eid': 4, 'name': '发布会已结束', 'limit': 2000, 'status': True, 'address': '北京会展中心', 'start_time': '2018-03-18T11:44:47'}, {'eid': 5, 'name': '小米5发布会', 'limit': 2000, 'status': True, 'address': '北京国家会议中心', 'start_time': '2018-03-19T18:18:07'}, {'eid': 11, 'name': '一加4手机发布会', 'limit': 2000, 'status': True, 'address': '深圳宝体', 'start_time': '2017-05-10T12:00:00'}]}
 
 
         </pre>
@@ -724,7 +763,7 @@ pt4.2: {'status': 10022, 'message': 'query result is empty'}
         </div>
         <pre>
         
-pt4.3: {'data': {'sign': False, 'phone': '13511001100', 'realname': 'alen', 'email': 'alen@mail.com'}, 'status': 200, 'message': 'success'}
+pt4.3: {'status': 200, 'message': 'success', 'data': {'realname': 'alen', 'phone': '13511001100', 'email': 'alen@mail.com', 'sign': False}}
 
 
         </pre>
@@ -749,7 +788,7 @@ pt4.3: {'data': {'sign': False, 'phone': '13511001100', 'realname': 'alen', 'ema
         </div>
         <pre>
         
-pt4.4: {'data': [{'sign': False, 'phone': '13511001100', 'realname': 'alen', 'email': 'alen@mail.com'}, {'sign': True, 'phone': '13511001101', 'realname': 'has sign', 'email': 'sign@mail.com'}, {'sign': False, 'phone': '13511001199', 'realname': 'tom', 'email': ''}], 'status': 200, 'message': 'success'}
+pt4.4: {'status': 200, 'message': 'success', 'data': [{'realname': 'alen', 'phone': '13511001100', 'email': 'alen@mail.com', 'sign': False}, {'realname': 'has sign', 'phone': '13511001101', 'email': 'sign@mail.com', 'sign': True}, {'realname': 'tom', 'phone': '13511001199', 'email': '', 'sign': False}]}
 
 
         </pre>
@@ -958,7 +997,7 @@ pt5.6: {'status': 10023, 'message': 'event status is not available'}
         </div>
         <pre>
         
-pt5.7: {'phone': '13511001100', 'realname': 'alen', 'status': 200, 'message': 'sign success'}
+pt5.7: {'status': 200, 'message': 'sign success'}
 
 
         </pre>
@@ -969,7 +1008,7 @@ pt5.7: {'phone': '13511001100', 'realname': 'alen', 'status': 200, 'message': 's
 </tr>
 
 <tr id='pt5.8' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_user_sign_time_start: eid=3 发布会已开始</div></td>
+    <td class='none'><div class='testcase'>test_user_sign_time_start: eid=4 发布会已开始</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -1005,5 +1044,42 @@ pt5.8: {'status': 10024, 'message': 'event has started'}
 
 <div id='ending'>&nbsp;</div>
 
+    <script type="text/javascript">
+var data = [
+	{
+		value: 0,
+		color: "#ebccd1",
+		label: "Error",
+		labelColor: 'white',
+		labelFontSize: '16'
+	},
+	{
+		value : 0,
+		color : "#faebcc",
+		label: "Fail",
+		labelColor: 'white',
+		labelFontSize: '16'
+	},
+	{
+		value : 29,
+		color : "#d6e9c6",
+		label : "Pass",
+		labelColor: 'white',
+		labelFontSize: '16'
+	}			
+]
+
+var newopts = {
+     animationSteps: 100,
+ 		animationEasing: 'easeInOutQuart',
+}
+
+//Get the context of the canvas element we want to select
+var ctx = document.getElementById("myChart").getContext("2d");
+
+var myNewChart = new Chart(ctx).Pie(data,newopts);
+
+</script>
+	
 </body>
 </html>
