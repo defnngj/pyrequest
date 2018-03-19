@@ -17,3 +17,9 @@ Python版本与依赖库：
 
 对应教材购买：
   《Web接口开发与自动化测试--基于Python语言》https://item.jd.com/12164814.html
+
+
+```MySQL
+ALTER TABLE  `sign_event` CHANGE  `create_time`  `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+ALTER TABLE  `sign_guest` CHANGE  `create_time`  `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+```
