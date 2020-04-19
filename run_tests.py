@@ -20,5 +20,5 @@ if __name__ == "__main__":
     runner = HTMLTestRunner(stream=fp,
                             title='发布会签到系统接口自动化测试',
                             description='运行环境：MySQL(PyMySQL), Requests, unittest ')
-    runner.run(testsuit)
+    runner.run(testsuit, rerun=0, save_last_run=False)
     fp.close()
